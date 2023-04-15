@@ -1,0 +1,41 @@
+.custom-input {
+    border-radius: 5px;
+  
+    @apply 
+          bg-transparent
+          text-base
+          px-3
+          font-normal
+          w-full;
+          border: 1px solid rgba(81, 93, 116, 0.5);
+  
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: 2px solid rgb(107, 156, 246);
+    }
+    
+  }
+  
+  .appInput {
+    @apply relative;
+  
+    &-content {
+      .header {
+        @apply flex justify-between items-center;
+        .title {
+          @apply block text-base font-normal mb-1;
+        }
+      }
+      .custom-input {
+        @apply flex-1;
+      }
+
+      ::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #292D32;
+    }
+    }
+  }

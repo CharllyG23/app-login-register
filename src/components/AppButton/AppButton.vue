@@ -1,0 +1,94 @@
+<template>
+  <button
+    :class="classList" 
+    :style="style"
+    :type="type"
+    class="app-btn"
+    @click="onClick"
+    :disabled="disabled"
+  >
+    <slot> 
+      <span class="label">{{ label }}</span>
+    </slot>
+  </button>
+</template>
+<script setup>
+import { computed, watch, ref } from 'vue'
+
+const emit = defineEmits(['on-click'])
+
+const props = defineProps({
+  width: {
+		type: Number,
+		default: 209,
+	},
+	height: {
+		type: Number,
+		default: 60,
+	},
+  	fullWidth: {
+		type: Boolean,
+		default: false,
+	},
+
+	fontSize: {
+		type: [String, Number],
+		default: 'text-base',
+	},
+
+	color: {
+		type: String,
+		default: 'black',
+	},
+
+	textColor: { type: String, default: 'white' },
+
+	label: {
+		type: String,
+		default: '',
+	},
+  	disabled: { type: Boolean, default: false },
+
+	type: {
+		type: String,
+		default: 'button',
+		validator: (value) => ['button', 'submit', 'reset'].includes(value.toLowerCase()),
+	},
+})
+
+const setStyles = () => ({
+	width: props.fullWidth ? '100%' : `${props.width}px`,
+	height: `${props.height}px`,
+	fontSize: typeof props.fontSize === 'number' ? `${props.fontSize}px` : null,
+})
+
+const setClasses = () => [
+	typeof props.fontSize === 'string' ? props.fontSize : '',
+	`text-${props.textColor}`,
+	props.color,
+	`hover:text-${props.textColor}`,
+]
+
+const classes = ref(setClasses())
+const style = ref(setStyles())
+
+watch(props, () => {
+	classes.value = setClasses()
+	style.value = setStyles()
+})
+
+const classList = computed(() => classes.value.join(' '))
+</script>
+<style lang="scss" scoped>
+@import './AppButton-style.scss';
+
+.buttom-color-1 {
+  background-color: #F30168;
+;
+}
+
+.buttom-color-2 {
+  background-color: black
+}
+
+</style>

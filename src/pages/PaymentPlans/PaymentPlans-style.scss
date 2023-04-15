@@ -1,0 +1,24 @@
+.paymentPlans{
+  &_image{
+    @apply text-center pt-16;
+    img{
+        @apply inline-flex;
+    }
+  }
+
+  &_header{
+    @apply pt-11 pb-2 text-center text-3xl font-bold;
+    font-style: #292D32;
+    .link{
+      @apply text-primary underline decoration-2 cursor-pointer;
+    }
+  }
+
+  &_container{
+    @apply max-w-screen-2xl mx-auto py-10 w-full px-4 lg:px-16 flex;
+  }
+
+  &_content{
+      @apply grid sm:grid-cols-1;
+  }
+}

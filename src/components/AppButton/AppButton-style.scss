@@ -1,0 +1,50 @@
+.app-btn {
+	@apply flex
+        font-sans
+        items-center
+        justify-center
+        relative
+        w-max
+        rounded-md
+        overflow-hidden
+        transition
+        duration-200
+        ease-in-out        
+        focus:outline-none
+        focus:shadow-none
+        before:content-['']
+        before:absolute
+        before:top-0
+        before:left-0
+        before:w-full
+        before:h-full
+        before:opacity-0
+        before:invisible
+        before:transition-all
+        before:duration-200
+        hover:before:visible;
+
+	.overlay {
+		@apply absolute
+            top-0
+            left-0
+            w-full
+            h-full
+            transition-all
+            duration-200
+            opacity-0;
+	}
+
+	&:disabled {
+		@apply cursor-not-allowed before:opacity-60 before:visible;
+
+		.icon,
+		.label {
+			@apply static;
+		}
+	}
+
+	&:hover:not(:disabled) {
+		@apply before:opacity-30;
+	}
+}
