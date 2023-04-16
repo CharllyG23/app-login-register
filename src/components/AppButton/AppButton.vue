@@ -20,7 +20,7 @@ const emit = defineEmits(['on-click'])
 const props = defineProps({
   width: {
 		type: Number,
-		default: 209,
+		default: 245,
 	},
 	height: {
 		type: Number,

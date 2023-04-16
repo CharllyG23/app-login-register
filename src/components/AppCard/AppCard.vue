@@ -8,7 +8,7 @@
 import { watch, ref, computed } from 'vue'
 
 export default {
-  name: 'py-card',
+  name: 'app-card',
 
   props: {
       outline: {

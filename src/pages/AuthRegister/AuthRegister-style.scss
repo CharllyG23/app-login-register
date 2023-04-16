@@ -1,0 +1,51 @@
+.authRegister{
+
+    &_image{
+        @apply text-center pt-16;
+        img{
+            @apply inline-flex;
+        }
+      }
+    
+      &_input{
+        @apply pb-3;
+      }
+    
+      &_header{
+        @apply pt-11 pb-2 text-center text-3xl font-bold px-3 lg:px-0;
+        font-style: #292D32;
+        .subTitle{
+          @apply text-primary underline decoration-2;
+        }
+      }
+      .min{
+        color: #515D74;
+        font-size: 14px
+      }
+
+      .pricePlans{
+        @apply mx-auto lg:mx-0 justify-center w-[348px];
+      }
+
+      h1{
+        @apply text-3xl font-bold pb-1;
+        font-style: #292D32;
+      }
+      span{
+        @apply font-normal text-lg;
+      }
+      &_info{
+        @apply pb-2;
+      }
+
+      &_content{
+        @apply flex flex-col-reverse lg:flex-row justify-center pt-8 max-w-7xl mx-auto px-2 lg:px-10 gap-x-6;
+
+        .card{
+          @apply pb-12 lg:pb-0;
+        }
+        &_wrap{
+            @apply w-full lg:max-w-[617px] p-[34px];
+          }
+      }
+}

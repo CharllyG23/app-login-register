@@ -5,7 +5,7 @@ import PaymentPlans from '../pages/PaymentPlans/PaymentPlans.vue'
 const routes = [
     { path: '/', component: AuthLogin },
     { path: '/plans', component: PaymentPlans},
-    { path: '/register', component: AuthRegiter },
+    { path: '/register/:id', component: AuthRegiter},
   ]
 
 export default routes; 

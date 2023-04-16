@@ -7,18 +7,20 @@
   }
 
   &_header{
-    @apply pt-11 pb-2 text-center text-3xl font-bold;
-    font-style: #292D32;
-    .link{
+    @apply pt-11 pb-2 text-center text-3xl font-bold px-3 lg:px-0;
+    color: #292D32;
+    .subTitle{
       @apply text-primary underline decoration-2 cursor-pointer;
     }
   }
 
   &_container{
-    @apply max-w-screen-2xl mx-auto py-10 w-full px-4 lg:px-16 flex;
+    @apply flex w-full justify-center flex-wrap gap-6 transition transform delay-100 pt-8 px-3;
+
+    &_content{
+      @apply w-[348px] rounded-md relative items-end pb-1 lg:pb-10;
+    }
   }
 
-  &_content{
-      @apply grid sm:grid-cols-1;
-  }
+  
 }

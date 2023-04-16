@@ -1,0 +1,66 @@
+.pricePlans{
+  position: relative;
+  color: #666666;
+
+  .tag{
+    @apply flex justify-center absolute;
+      &_content{
+        position: relative;
+        top: -20px;
+        left: 100px;
+        background-color: #10C300;
+        border-radius: 10px;
+        width: 139px;
+        height: 33px;
+        text-align: center;
+        justify-content: center;
+        color: white;
+        margin: 0;
+        font-size: 14px;
+        padding-top: 6px;
+      }
+  }
+
+  .chosenPlane{
+    @apply bg-black w-[179px] max-w-full;
+  }
+
+  &_content{
+    @apply bg-white p-5 lg:p-10;
+
+    &_header{
+      @apply text-center space-y-3;
+
+      .title{
+        font-size: 26px;
+        font-weight: 700;
+      }
+      .price{
+        @apply text-primary text-4xl font-bold pb-3;
+      }
+      .taxa{
+        @apply flex flex-col text-sm;
+      }
+
+      .description{
+        @apply text-lg pt-1 whitespace-break-spaces px-4
+      }
+    }
+
+    .button{
+      @apply py-5 flex justify-center;
+    }
+
+    .info{
+      @apply space-y-4;
+
+      .serve{
+        @apply font-bold text-lg pb-1 ;
+      }
+
+      .list{
+        @apply space-y-1 text-[17px] ;
+      }
+    }
+  }
+}

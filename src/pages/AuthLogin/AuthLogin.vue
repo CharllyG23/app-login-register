@@ -33,7 +33,9 @@
               fullWidth
               color="buttom-color-1"
               font-size="text-lg"
-            ><span class="text-white">FAZER LOGIN</span></app-button>
+            >
+              <span class="text-white">FAZER LOGIN</span>
+            </app-button>
           </div>
         </div>
       </app-card>  
