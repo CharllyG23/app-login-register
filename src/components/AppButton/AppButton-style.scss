@@ -48,3 +48,24 @@
 		@apply before:opacity-30;
 	}
 }
+
+.buttom-primary {
+        background-color: #F30168;
+              .label {
+                      color: white;
+              }
+      }
+      
+      .buttom-outline-black {
+        background-color: white;
+        border: 2px solid black;
+        &:hover {
+              background-color: black;
+              .label {
+                      color: white;
+              }
+        }
+              .label {
+                      color: black;
+              }
+      }

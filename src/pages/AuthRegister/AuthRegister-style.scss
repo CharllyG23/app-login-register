@@ -1,5 +1,4 @@
 .authRegister{
-
     &_image{
         @apply text-center pt-16;
         img{
@@ -25,6 +24,40 @@
 
       .pricePlans{
         @apply mx-auto lg:mx-0 justify-center w-[348px];
+        &_overflow{
+          @apply h-[1040px] overflow-hidden relative ;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            height: 20%;
+            bottom: 0px;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%); 
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            pointer-events: none;
+          }
+        }
+      }
+
+      .chosenPlane{
+        @apply flex justify-center absolute;
+          &_content{
+            position: relative;
+            top: -20px;
+            left: 90px;
+            background-color: #000000;
+            border-radius: 10px;
+            width: 179px;
+            height: 33px;
+            text-align: center;
+            justify-content: center;
+            color: white;
+            margin: 0;
+            font-size: 14px;
+            padding-top: 6px;
+            z-index: 20;
+          }
       }
 
       h1{
@@ -39,13 +72,106 @@
       }
 
       &_content{
-        @apply flex flex-col-reverse lg:flex-row justify-center pt-8 max-w-7xl mx-auto px-2 lg:px-10 gap-x-6;
+        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 pb-10;
 
         .card{
-          @apply pb-12 lg:pb-0;
+          @apply pb-12 lg:pb-0 bg-white;
         }
         &_wrap{
             @apply w-full lg:max-w-[617px] p-[34px];
           }
       }
+}
+
+.checkbox {
+  --background: #fff;
+  --border: #d1d6ee;
+  --border-hover: #d8daea;
+  --border-active: #F30168;
+  --tick: #fff;
+  position: relative;
+  input,
+  svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+  }
+  input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      outline: none;
+      background: var(--background);
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: box-shadow 0.3s;
+      box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+      &:hover {
+          --s: 2px;
+          --b: var(--border-hover);
+      }
+      &:checked {
+          --b: var(--border-active);
+      }
+  }
+  svg {
+      pointer-events: none;
+      fill: none;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--stroke, var(--border-active));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      transform: scale(var(--scale, 1)) translateZ(0);
+  }
+  &.path {
+      input {
+          &:checked {
+              --s: 2px;
+              transition-delay: 0.4s;
+              & + svg {
+                  --a: 16.1 86.12;
+                  --o: 102.22;
+              }
+          }
+      }
+      svg {
+          stroke-dasharray: var(--a, 86.12);
+          stroke-dashoffset: var(--o, 86.12);
+          transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
+      }
+  }
+  &.bounce {
+      --stroke: var(--tick);
+      input {
+          &:checked {
+              --s: 11px;
+              & + svg {
+                  animation: bounce 0.4s linear forwards 0.2s;
+              }
+          }
+      }
+      svg {
+          --scale: 0;
+      }
+  }
+}
+
+@keyframes bounce {
+  50% {
+      transform: scale(1.2);
+  }
+  75% {
+      transform: scale(0.9);
+  }
+  100% {
+      transform: scale(1);
+  }
 }

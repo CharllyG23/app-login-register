@@ -36,12 +36,11 @@ const props = defineProps({
 		default: 'text-base',
 	},
 
-	color: {
+	theme: {
 		type: String,
 		default: 'black',
 	},
 
-	textColor: { type: String, default: 'white' },
 
 	label: {
 		type: String,
@@ -56,17 +55,18 @@ const props = defineProps({
 	},
 })
 
-const setStyles = () => ({
-	width: props.fullWidth ? '100%' : `${props.width}px`,
-	height: `${props.height}px`,
-	fontSize: typeof props.fontSize === 'number' ? `${props.fontSize}px` : null,
-})
+const setStyles = () => {
+	return {
+		width: props.fullWidth ? '100%' : `${props.width}px`,
+		height: `${props.height}px`,
+		fontSize: typeof props.fontSize === 'number' ? `${props.fontSize}px` : null,
+	}
+}
 
 const setClasses = () => [
 	typeof props.fontSize === 'string' ? props.fontSize : '',
-	`text-${props.textColor}`,
-	props.color,
 	`hover:text-${props.textColor}`,
+	`buttom-${props.theme}`
 ]
 
 const classes = ref(setClasses())
@@ -81,14 +81,4 @@ const classList = computed(() => classes.value.join(' '))
 </script>
 <style lang="scss" scoped>
 @import './AppButton-style.scss';
-
-.buttom-color-1 {
-  background-color: #F30168;
-;
-}
-
-.buttom-color-2 {
-  background-color: black
-}
-
 </style>

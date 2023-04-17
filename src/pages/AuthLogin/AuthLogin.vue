@@ -31,10 +31,10 @@
             <app-button
               class="btn"
               fullWidth
-              color="buttom-color-1"
+              theme="primary" 
               font-size="text-lg"
+              :label="'Login'"
             >
-              <span class="text-white">FAZER LOGIN</span>
             </app-button>
           </div>
         </div>
