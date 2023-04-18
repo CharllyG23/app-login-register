@@ -25,14 +25,15 @@
         hover:before:visible;
 
 	.overlay {
-		@apply absolute
-            top-0
-            left-0
-            w-full
-            h-full
-            transition-all
-            duration-200
-            opacity-0;
+		@apply 
+      absolute
+      top-0
+      left-0
+      w-full
+      h-full
+      transition-all
+      duration-200
+      opacity-0;
 	}
 
 	&:disabled {
@@ -50,22 +51,28 @@
 }
 
 .buttom-primary {
-        background-color: #F30168;
-              .label {
-                      color: white;
-              }
-      }
-      
-      .buttom-outline-black {
-        background-color: white;
-        border: 2px solid black;
-        &:hover {
-              background-color: black;
-              .label {
-                      color: white;
-              }
-        }
-              .label {
-                      color: black;
-              }
-      }
+  background-color: #F30168;
+  z-index: 20;
+  &:hover {
+    background-color: #f63789;
+
+  }
+  .label {
+    color: white;
+  }
+}
+
+.buttom-outline-black {
+  background-color: white;
+  z-index: 20;
+  border: 1px solid black;
+  &:hover {
+  background-color: black;
+  .label {
+    color: white;
+  }
+  }
+  .label {
+    color: black;
+  }
+}

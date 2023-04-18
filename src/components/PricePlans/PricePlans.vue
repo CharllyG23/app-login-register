@@ -30,9 +30,9 @@
           <app-button
             theme="primary"
             font-size="text-lg"
+            :label="'ESCOLHER ESSE PLANO'"
             @click="nextPage"
           >
-            <span class="text-white">ESCOLHER ESSE PLANO</span>
           </app-button>
         </div>
         <div class="info">
@@ -80,7 +80,6 @@
               </div>
             </div>
           </div>
-
           <div v-if="data.freeMigration" class="list">
             <p class="serve"> {{ data.freeMigration }}</p>
             <div class="list">
@@ -95,11 +94,11 @@
               <p class="you"> {{ data.you }}</p>
                 <div class="list">
                   <div class="flex items-center">
-                    <img :src="tickSquare" alt="square">
+                    <img :src="tickSquare" alt="square" class="pb-1">
                     <p>{{ data.webmail }}</p>
                   </div>
                   <div class="flex items-center">
-                    <img :src="tickSquare" alt="square">
+                    <img :src="tickSquare" alt="square" class="pb-1">
                     <p>{{ data.antiSpam }}</p>
                   </div>
                   <div class="flex items-center">
@@ -125,6 +124,15 @@
                 </div>
             </div>
         </div>
+        <div v-if="data.chosenPlane" class="top-[75%] absolute z-20">
+            <app-button
+              theme="outline-black"
+              font-size="text-lg"
+              :label="'Trocar plano'"
+              @click="goBack"
+              >
+            </app-button>
+          </div>
       </div>
      </div>
     </app-card>
@@ -148,6 +156,10 @@ const props = defineProps({
   const nextPage = () => {
     router.push({ path: `/register/${props.data.id}` })
   };
+
+  const goBack = () => {
+    router.push({ path: '/plans' })
+  }
 </script>
 <style lang="scss" scoped>
 @import './PricePlans-style.scss';

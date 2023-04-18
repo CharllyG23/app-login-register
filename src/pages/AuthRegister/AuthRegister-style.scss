@@ -25,7 +25,7 @@
       .pricePlans{
         @apply mx-auto lg:mx-0 justify-center w-[348px];
         &_overflow{
-          @apply h-[1040px] overflow-hidden relative ;
+          @apply h-[1038px] overflow-hidden relative ;
           &::after {
             content: '';
             position: absolute;
@@ -33,7 +33,7 @@
             right: 0px;
             height: 20%;
             bottom: 0px;
-            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%); 
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%); 
             transform: matrix(1, 0, 0, -1, 0, 0);
             pointer-events: none;
           }
@@ -60,6 +60,12 @@
           }
       }
 
+      .btn[disabled] {
+        background-color: #b2a8ac;
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
       h1{
         @apply text-3xl font-bold pb-1;
         font-style: #292D32;
@@ -72,7 +78,7 @@
       }
 
       &_content{
-        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 pb-10;
+        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 pb-10 h-[1040px];
 
         .card{
           @apply pb-12 lg:pb-0 bg-white;
@@ -90,6 +96,7 @@
   --border-active: #F30168;
   --tick: #fff;
   position: relative;
+  display: flex;
   input,
   svg {
       width: 18px;

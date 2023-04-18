@@ -1,0 +1,21 @@
+.toast{
+    @apply fixed top-10 left-1/2 bg-green-500 text-center text-white text-base z-50 rounded w-56 p-3;
+}
+
+.bounce-enter-active {
+animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.20);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
