@@ -90,10 +90,10 @@
         @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 gap-y-10 pb-10 ;
 
         .card{
-          @apply pb-12 lg:pb-0 bg-white;
+          @apply pb-12 lg:pb-0 ;
         }
         &_wrap{
-            @apply w-full lg:max-w-[617px] h-full max-h-[1050px] p-4 lg:p-[34px];
+            @apply w-full lg:max-w-[617px] h-full max-h-[1040px] p-4 lg:p-[34px] bg-white;
           }
       }
 }
