@@ -1,7 +1,19 @@
 .toast{
-    @apply fixed top-10 left-1/2 bg-green-500 text-center text-white text-base z-50 rounded w-56 p-3;
-}
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &_content{
+     @apply  flex justify-center text-center text-white text-base rounded w-60 p-3;
+    }
 
+    .red {
+        background-color: rgb(214, 24, 24);
+    }
+    .green {
+        background-color: rgba(84, 208, 31, 0.8);
+    }
+}
 .bounce-enter-active {
 animation: bounce-in 0.5s;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="pricePlans"> 
-    <app-card >
+    <app-card outline>
       <div class="tag">
         <div v-if="data.butUsed && !data.chosenPlane" class="tag_content">
           <span>MAIS USADO</span>

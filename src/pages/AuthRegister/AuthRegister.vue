@@ -7,7 +7,7 @@
         <h1>Você está muito próximo de mudar a forma de</h1>
         <p class="subTitle">hospedar seu site</p>
       </div>
-      <app-toast v-model="isAccountCreated" />
+      <app-toast v-model="isAccountCreated" :label="'Conta criada com sucesso'" />
       <div class="authRegister_content">
         <div class="card">
           <app-card outline>

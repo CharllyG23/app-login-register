@@ -1,18 +1,19 @@
 <template>
     <teleport to="body">
         <transition name="bounce">
-            <div v-if="modelValue" class="toast">
-				<h1>Conta criada com sucesso</h1>
-            </div>
+           <div class="toast ">
+                <div v-if="modelValue" :class="['toast_content', cor] ">
+                    <label for="">{{ label }}</label>
+                </div>
+           </div>
         </transition>
     </teleport>
 </template>
 <script setup>
 defineProps({
-	modelValue: {
-		type: Boolean,
-		default: false,
-	},
+	modelValue: { type: Boolean, default: false},
+    label:{ required: true },
+    cor: { type: String, default: 'blue'},
 })
 
 </script>
