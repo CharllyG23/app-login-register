@@ -20,9 +20,11 @@
         padding-top: 6px;
       }
   }
-
+  .button{
+    @apply flex justify-center;
+  }
   &_content{
-    @apply bg-white rounded-md p-10 ;
+    @apply bg-white rounded-md p-10 w-[348px];
 
     &_header{
       @apply text-center space-y-2;
@@ -40,28 +42,6 @@
 
       .description{
         @apply text-lg pt-1 whitespace-break-spaces px-6;
-      }
-    }
-
-    .button{
-      @apply flex justify-center;
-    }
-
-    .info{
-      @apply space-y-3;
-
-      .serve{
-        @apply font-bold text-lg py-4 px-2;
-      }
-      .you{
-        @apply font-bold text-lg py-2 px-2;
-      }
-      .day{
-        @apply font-bold text-lg ;
-      }
-
-      .list{
-        @apply  text-[17px] ;
       }
     }
   }

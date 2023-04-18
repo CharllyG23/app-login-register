@@ -86,7 +86,7 @@
                 </div>
                 <p class="pl-3 text-sm">Ao concluir com seu cadastro você concorda com nossos <p class="underline decoration ">termos de uso e politicas de privacidade.</p></p>
               </div>
-              <div class="pt-10">
+              <div class="pt-6">
                 <app-button
                   class="btn"
                   fullWidth

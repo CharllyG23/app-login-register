@@ -23,15 +23,15 @@
       }
 
       .pricePlans{
-        @apply mx-auto lg:mx-0 justify-center w-[348px];
+        @apply mx-auto lg:mx-0 justify-center w-[348px] h-[1038px] overflow-hidden;
         &_overflow{
-          @apply h-[1040px] overflow-hidden relative ;
+          @apply overflow-hidden relative ;
           &::after {
             content: '';
             position: absolute;
             left: 0px;
             right: 0px;
-            height: 10%;
+            height: 28%;
             bottom: 0px;
             background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%); 
             transform: matrix(1, 0, 0, -1, 0, 0);
@@ -78,13 +78,13 @@
       }
 
       &_content{
-        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 pb-10 ;
+        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 gap-y-6 pb-10 ;
 
         .card{
           @apply pb-12 lg:pb-0 bg-white;
         }
         &_wrap{
-            @apply w-full lg:max-w-[617px] p-[34px];
+            @apply w-full lg:max-w-[617px] h-[1038px] p-[34px];
           }
       }
 }

@@ -15,10 +15,10 @@
   }
 
   &_container{
-    @apply flex w-full justify-center flex-wrap gap-6 transition transform delay-100 pt-8 px-3;
+    @apply flex justify-center flex-wrap gap-6 transition transform delay-100 pt-8 px-3;
 
     &_content{
-      @apply w-[348px] rounded-md relative items-end pb-1 lg:pb-10;
+      @apply rounded-md relative items-end pb-1 lg:pb-10;
     }
   }
 

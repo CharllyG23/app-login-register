@@ -1,0 +1,17 @@
+.info{
+    @apply space-y-3;
+
+    .serve{
+      @apply font-bold text-lg py-4 px-2;
+    }
+    .you{
+      @apply font-bold text-lg py-2 px-2;
+    }
+    .day{
+      @apply font-bold text-lg ;
+    }
+
+    .list{
+      @apply  text-[17px] ;
+    }
+  }

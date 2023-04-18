@@ -1,6 +1,6 @@
 <template>
   <div class="pricePlans"> 
-    <app-card outline>
+    <app-card>
       <div class="tag">
         <div v-if="data.butUsed && !data.chosenPlane" class="tag_content">
           <span>MAIS USADO</span>
@@ -35,96 +35,8 @@
           >
           </app-button>
         </div>
-        <div class="info">
-          <div>
-            <p class="serve"> {{ data.servers }} <span class="underline decoration">{{ data.state }}</span></p>
-            <div class="list">
-                <div class="flex">
-                  <img :src="tickSquare" alt="square" class="pb-5 inline-flex">
-                  <p>{{ data.data }}</p>
-                </div>
-                <div class="flex items-center">
-                  <img :src="tickSquare" alt="square" >
-                  <p>{{ data.asp }}</p>
-                </div>
-                <div class="flex items-center">
-                  <img :src="tickSquare" alt="square" >
-                  <p>{{ data.ftp }}</p>
-                </div>
-                <div class="flex items-center">
-                  <img :src="tickSquare" alt="square" >
-                  <p>{{ data.accountsEmail }}</p>
-                </div>
-                <div class="flex items-center">
-                  <img :src="tickSquare" alt="square">
-                  <p>{{ data.subdomain }} <span>{{ data.free  }}</span></p>
-                </div>
-            </div>
-          </div>
-
-          <div class="list">
-            <p class="day"> {{ data.support }}</p>
-            <p class="you"> {{ data.applications }}</p>
-            <div class="list">
-              <div class="flex items-center">
-                <img :src="tickSquare" alt="square">
-                <p>{{ data.wordpress }}</p>
-              </div>
-              <div class="flex items-center">
-                <img :src="tickSquare" alt="square">
-                <p>{{ data.drupal }}</p>
-              </div>
-              <div class="flex items-center">
-                <img :src="tickSquare" alt="square">
-                <p>{{ data.others }}</p>
-              </div>
-            </div>
-          </div>
-          <div v-if="data.freeMigration" class="list">
-            <p class="serve"> {{ data.freeMigration }}</p>
-            <div class="list">
-              <div class="flex ">
-                <img :src="tickSquare" alt="square" class="pb-5">
-                <p>{{ data.sites }}</p>
-              </div>
-            </div>
-          </div>
-
-            <div class="list">
-              <p class="you"> {{ data.you }}</p>
-                <div class="list">
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square" class="pb-1">
-                    <p>{{ data.webmail }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square" class="pb-1">
-                    <p>{{ data.antiSpam }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square" class="pb-1">
-                    <p>{{ data.panelDNS }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square" >
-                    <p>{{ data.controlPanel }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square" class="pb-5">
-                    <p>{{ data.phpSettings }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square">
-                    <p>{{ data.sslCertificate }}</p>
-                  </div>
-                  <div class="flex items-center">
-                    <img :src="tickSquare" alt="square">
-                    <p>{{ data.transfer }}</p>
-                  </div>
-                </div>
-            </div>
-        </div>
-        <div v-if="data.chosenPlane" class="top-[75%] absolute z-20">
+        <price-plans-items :item="data" />
+        <div v-if="data.chosenPlane" class="top-[82%] absolute z-20">
             <app-button
               theme="outline-black"
               font-size="text-lg"
@@ -132,7 +44,7 @@
               @click="goBack"
               >
             </app-button>
-          </div>
+        </div>
       </div>
      </div>
     </app-card>
@@ -142,7 +54,7 @@
 import { useRouter } from 'vue-router'; 
 import AppCard from '../AppCard/AppCard.vue';
 import AppButton from '../AppButton/AppButton.vue';
-import tickSquare from '../../assets/img/tick-square.svg';
+import PricePlansItems from '../PricePlansItems/PricePlansItems.vue';
 import AppLine from '../AppLine/AppLine.vue';
 
 const props = defineProps({

@@ -63,6 +63,7 @@ const password = ref('')
 const isLogin = ref(false)
 const mesagemm = ref('')
 const toastCord = ref('')
+
 const loginUser = async () => {
   try{
     const response = await fetch("https://fakestoreapi.com/auth/login", {
