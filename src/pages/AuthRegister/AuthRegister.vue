@@ -49,7 +49,7 @@
                   type="password"
                   name="password"
                 />
-                <span v-if="!passwordLength && passwordWithCharacters" class="min"> No minimo 8 caracter </span>
+                <span  class="min"> No minimo 8 caracter </span>
               </div>
               <div class="authRegister_input">
                 <app-input 
@@ -65,10 +65,10 @@
               </div>
               <div class="authRegister_footer">
                 <h1 class="pt-2">Dados do seu site</h1>
-                <div class="authRegister_input">
+                <div class="authRegister_input pt-2">
                   <app-input 
                     v-model="userData.site"
-                    :label="'Confirme sua senha'"
+                    :label="'Nome do seu site'"
                     :placeholder="'Meu site'"
                     name="site"
                   />
@@ -76,7 +76,7 @@
                 </div>
               </div>
               <AppLine />
-              <div class="checkbox pt-6">
+              <div class="checkbox pt-4 lg:pt-6">
                 <div class="checkbox path">
                   <input type="checkbox" v-model="userData.acceptTerms" id="acceptTerms" required>
                   <svg viewBox="0 0 21 21">
@@ -110,6 +110,15 @@
           <div class="pricePlans_overflow">
             <price-plans :data="plan"/>
           </div>
+          <!-- <div v-if="!chosenPlane">
+            <app-button
+              theme="outline-black"
+              font-size="text-lg"
+              :label="'Trocar plano'"
+              @click="goBack"
+              >
+            </app-button>
+          </div> -->
         </div>
       </div>
   </div>
@@ -131,6 +140,8 @@ const route = useRoute();
 const planId = Number(route.params.id)
 const plan = plans.find(data => data.id === planId);
 plan.chosenPlane = true
+
+const chosenPlane = ref(false)
 
 const isAccountCreated = ref(false);
 
@@ -202,6 +213,10 @@ const registerUser = async () => {
     console.error(error);
   }
 };
+
+const goBack = () => {
+    router.push({ path: '/plans' })
+  }
 
 onBeforeUnmount(() => {
   plan.chosenPlane = false

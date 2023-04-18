@@ -20,11 +20,16 @@
         padding-top: 6px;
       }
   }
+
+ 
+
   .button{
     @apply flex justify-center;
   }
   &_content{
     @apply bg-white rounded-md p-10 w-[348px];
+
+   
 
     &_header{
       @apply text-center space-y-2;

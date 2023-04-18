@@ -89,7 +89,6 @@ const loginUser = async () => {
 
     setTimeout(()=>{
       isLogin.value = false;
-      window.location.replace('/')
     }, 1500)
   } catch (err) {
     console.error(err);

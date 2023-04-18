@@ -2,11 +2,10 @@
   <div class="pricePlans"> 
     <app-card>
       <div class="tag">
-        <div v-if="data.butUsed && !data.chosenPlane" class="tag_content">
+        <div v-if="data.butUsed" class="tag_content">
           <span>MAIS USADO</span>
         </div>
       </div>
-     <div class="pricePlans_container">
       <div class="pricePlans_content">
         <div class="pricePlans_content_header">
           <h1 class="title">{{ data.name }}</h1>
@@ -36,17 +35,7 @@
           </app-button>
         </div>
         <price-plans-items :item="data" />
-        <div v-if="data.chosenPlane" class="top-[82%] absolute z-20">
-            <app-button
-              theme="outline-black"
-              font-size="text-lg"
-              :label="'Trocar plano'"
-              @click="goBack"
-              >
-            </app-button>
-        </div>
       </div>
-     </div>
     </app-card>
   </div>
 </template>
@@ -69,9 +58,6 @@ const props = defineProps({
     router.push({ path: `/register/${props.data.id}` })
   };
 
-  const goBack = () => {
-    router.push({ path: '/plans' })
-  }
 </script>
 <style lang="scss" scoped>
 @import './PricePlans-style.scss';

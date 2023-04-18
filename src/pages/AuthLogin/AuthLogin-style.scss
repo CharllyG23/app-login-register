@@ -36,7 +36,7 @@
     padding: 1rem;
 
     &_wrap{
-      @apply p-[34px];
+      @apply p-4 lg:p-[34px];
     }
     .forget{
       @apply font-normal text-right text-base text-slate-600 pt-1 cursor-pointer;

@@ -5,7 +5,7 @@
       <div class="list">
           <div class="flex">
             <img :src="tickSquare" alt="square" class="pb-5 inline-flex">
-            <p>{{ item.item }}</p>
+            <p>{{ item.data }}</p>
           </div>
           <div class="flex items-center">
             <img :src="tickSquare" alt="square" >

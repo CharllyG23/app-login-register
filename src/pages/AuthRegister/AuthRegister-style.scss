@@ -12,7 +12,7 @@
     
       &_header{
         @apply pt-11 pb-2 text-center text-3xl font-bold px-3 lg:px-0;
-        font-style: #292D32;
+        color: #292D32;
         .subTitle{
           @apply text-primary underline decoration-2;
         }
@@ -23,7 +23,15 @@
       }
 
       .pricePlans{
-        @apply mx-auto lg:mx-0 justify-center w-[348px] h-[1038px] overflow-hidden;
+        @apply mx-auto lg:mx-0 justify-center w-[348px] h-full max-h-[1040px] ;
+
+        /* Media Query para tablet */
+        @media only screen and (max-width: 1023px) {
+          .pricePlans {
+            @apply h-[350px];
+          }
+        }
+        
         &_overflow{
           @apply overflow-hidden relative ;
           &::after {
@@ -31,7 +39,7 @@
             position: absolute;
             left: 0px;
             right: 0px;
-            height: 28%;
+            height: 20%;
             bottom: 0px;
             background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%); 
             transform: matrix(1, 0, 0, -1, 0, 0);
@@ -39,6 +47,7 @@
           }
         }
       }
+      
 
       .chosenPlane{
         @apply flex justify-center absolute;
@@ -78,13 +87,13 @@
       }
 
       &_content{
-        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 gap-y-6 pb-10 ;
+        @apply flex flex-col-reverse lg:flex-row justify-center pt-12 max-w-7xl mx-auto px-2 lg:px-12 gap-x-6 gap-y-10 pb-10 ;
 
         .card{
           @apply pb-12 lg:pb-0 bg-white;
         }
         &_wrap{
-            @apply w-full lg:max-w-[617px] h-[1038px] p-[34px];
+            @apply w-full lg:max-w-[617px] h-full max-h-[1050px] p-4 lg:p-[34px];
           }
       }
 }
