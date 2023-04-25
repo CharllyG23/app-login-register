@@ -35,7 +35,7 @@ export default {
           classList.value = [
               `bg-${color}`,
               `${padding}`,
-              outline ? `border-2 border-solid border-slate-200` : ''
+              outline ? `border border-solid border-slate-200` : ''
           ]
       }
 

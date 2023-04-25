@@ -21,6 +21,7 @@
                   v-model="userData.name"
                   :label="'Nome completo'"
                   :placeholder="'Informe seu nome completo'"
+                  type="text"
                   name="name"
                 />
               </div>
@@ -28,9 +29,9 @@
                 <app-input 
                   v-model="userData.phone"
                   :label="'Celular'"
-                  :placeholder="'(99) 99999-0000'"
-                  type="number"
-                  name="tel"
+                  placeholder="(xx) xxxxx-xxxx"
+                  type="tel"
+                  name="phone"
                 />
               </div>
               <div class="authRegister_input">
@@ -70,6 +71,7 @@
                     v-model="userData.site"
                     :label="'Nome do seu site'"
                     :placeholder="'Meu site'"
+                    type="text"
                     name="site"
                   />
                   <span class="min">Exatamente igual o título do seu site</span>
